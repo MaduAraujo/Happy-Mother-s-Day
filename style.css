@@ -75,6 +75,7 @@ body {
     transform-style: preserve-3d;
     transform-origin: left;
     transition: transform 500ms 0ms;
+    pointer-events: none;
 }
 
 .envelope:hover .card-cover {

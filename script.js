@@ -33,10 +33,14 @@ if (isTouchOnly) {
     });
 }
 
-giftBtn.addEventListener('click', (e) => {
+function openGiftModal(e) {
     e.stopPropagation();
+    e.preventDefault();
     giftModal.classList.add('open');
-});
+}
+
+giftBtn.addEventListener('click', openGiftModal);
+giftBtn.addEventListener('touchend', openGiftModal);
 
 giftModalClose.addEventListener('click', () => {
     giftModal.classList.remove('open');
