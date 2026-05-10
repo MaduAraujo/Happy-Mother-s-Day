@@ -1,5 +1,6 @@
 const envelope = document.querySelector('.envelope');
 const heartSeal = document.querySelector('.heart-seal');
+const openHint = document.getElementById('openHint');
 const giftBtn = document.getElementById('giftBtn');
 const giftModal = document.getElementById('giftModal');
 const giftModalClose = document.getElementById('giftModalClose');
@@ -11,6 +12,8 @@ if (isTouchOnly) {
         if (!envelope.classList.contains('is-open')) {
             envelope.classList.add('is-open');
             heartSeal.style.opacity = 0;
+            heartSeal.style.animationPlayState = 'paused';
+            if (openHint) openHint.style.display = 'none';
         }
     });
 } else {
@@ -19,11 +22,13 @@ if (isTouchOnly) {
     envelope.addEventListener('mouseover', () => {
         clearTimeout(timeoutId);
         heartSeal.style.opacity = 0;
+        heartSeal.style.animationPlayState = 'paused';
     });
 
     envelope.addEventListener('mouseout', () => {
         timeoutId = setTimeout(() => {
             heartSeal.style.opacity = 1;
+            heartSeal.style.animationPlayState = 'running';
         }, 1500);
     });
 }

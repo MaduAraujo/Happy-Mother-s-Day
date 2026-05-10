@@ -10,21 +10,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="bg-hearts" aria-hidden="true">
+        <span>❤</span>
+        <span>❤</span>
+        <span>❤</span>
+        <span>❤</span>
+        <span>❤</span>
+        <span>❤</span>
+        <span>❤</span>
+        <span>❤</span>
+    </div>
+
     <div class="envelope">
         <div class="envelope-lid"></div>
         <div class="envelope-lid envelope-lid-secondary"></div>
         <div class="card-wrapper">
             <div class="card">
-                <div class="card-cover">
-                    <div class="card-side card-side-primary">
-                        <h1 class="card-title">
-                            <span class="card-title-secondary">Feliz</span>
-                            <span class="card-title-main">Dia das</span>
-                            <span class="card-title-secondary">Mães</span>
-                        </h1>
-                    </div>
-                    <div class="card-side card-side-secondary"></div>
-                </div>
                 <div class="card-body">
                     <p>Mãe, dizem que o café melhora o humor das pessoas... então encare esta Dolce Gusto como meu investimento
                         estratégico na paz mundial (ou, pelo menos, na harmonia de casa).</p>
@@ -32,9 +33,19 @@
                         Praticidade para você, sobrevivência para mim. Feliz Dia das Mães! ❤️</p>
                     <button class="gift-btn" id="giftBtn">Ver meu presente 🎁</button>
                 </div>
+                <div class="card-cover">
+                    <div class="card-side card-side-primary">
+                        <h1 class="card-title">
+                            <span class="card-title-top">Feliz</span>
+                            <span class="card-title-main">Dia das<br>Mães</span>
+                        </h1>
+                    </div>
+                    <div class="card-side card-side-secondary"></div>
+                </div>
             </div>
         </div>
         <div class="heart-seal"></div>
+        <span class="open-hint" id="openHint">Toque para abrir ✉️</span>
     </div>
 
     <div class="gift-modal" id="giftModal">
