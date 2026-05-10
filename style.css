@@ -318,3 +318,67 @@ body {
     object-fit: contain;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
+
+/* ===== Responsividade Mobile ===== */
+html, body {
+    min-height: 100vh;
+}
+
+@media (max-width: 340px) {
+    .envelope {
+        transform: translate(-50%, -50%) scale(0.85);
+    }
+}
+
+@media (hover: none) {
+    /* Desabilita animações baseadas em hover no touch */
+    .envelope:hover .card-wrapper,
+    .envelope:not(:hover) .card-wrapper {
+        animation: none;
+    }
+
+    .envelope:hover .card {
+        transform: none;
+        transition-delay: 0ms;
+    }
+
+    .envelope:hover .card-cover {
+        transform: none;
+        transition-delay: 0ms;
+    }
+
+    .envelope:hover .envelope-lid-secondary,
+    .envelope:not(:hover) .envelope-lid-secondary {
+        transform: none;
+        animation: none;
+    }
+
+    /* Animações controladas pela classe .is-open (via JS) */
+    .envelope.is-open .card-wrapper {
+        animation: show-card 1000ms 600ms forwards;
+    }
+
+    .envelope:not(.is-open) .card-wrapper {
+        animation: hide-card 1000ms forwards;
+    }
+
+    .envelope.is-open .card {
+        transform: rotateY(-15deg);
+        transition-delay: 1750ms;
+    }
+
+    .envelope.is-open .card-cover {
+        transform: rotateY(-135deg);
+        transition-delay: 2250ms;
+    }
+
+    .envelope.is-open .envelope-lid-secondary {
+        transform: rotateX(180deg);
+        transition-delay: 100ms;
+        animation: open-lid-stacking 500ms forwards;
+    }
+
+    .envelope:not(.is-open) .envelope-lid-secondary {
+        animation: close-lid-stacking 1250ms forwards;
+    }
+}
