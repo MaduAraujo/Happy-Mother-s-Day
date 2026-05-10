@@ -30,7 +30,7 @@ if (isTouchOnly) {
         timeoutId = setTimeout(() => {
             heartSeal.style.opacity = 1;
             heartSeal.style.animationPlayState = 'running';
-        }, 1500);
+        }, 1000);
     });
 }
 
