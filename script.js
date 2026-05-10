@@ -8,14 +8,15 @@ const giftModalClose = document.getElementById('giftModalClose');
 const isTouchOnly = window.matchMedia('(hover: none)').matches;
 
 if (isTouchOnly) {
-    envelope.addEventListener('click', () => {
-        if (!envelope.classList.contains('is-open')) {
-            envelope.classList.add('is-open');
-            heartSeal.style.opacity = 0;
-            heartSeal.style.animationPlayState = 'paused';
-            if (openHint) openHint.style.display = 'none';
-        }
-    });
+    envelope.addEventListener('click', (e) => {
+    if (e.target.closest('#giftBtn')) return; 
+    if (!envelope.classList.contains('is-open')) {
+        envelope.classList.add('is-open');
+        heartSeal.style.opacity = 0;
+        heartSeal.style.animationPlayState = 'paused';
+        if (openHint) openHint.style.display = 'none';
+    }
+});
 } else {
     let timeoutId;
 
